@@ -21,7 +21,7 @@ else
 </head>
 <body>
 	<?PHP
-	include '../head.php';
+	include ('../'.theme.'head.php');
 	?>
 	<div class="main">
 		<div class="main-inner-right">
@@ -62,7 +62,7 @@ else
 		</div>
 	</div>
 <?PHP
-include '../footer.php';
+include ('../'.theme.'footer.php');
 ?>
 </body>
 </html>

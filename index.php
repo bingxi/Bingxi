@@ -36,7 +36,7 @@ include (theme."head.php");
     </div>
 </div>
 <?PHP
-include (theme."header.php");
+include (theme."footer.php");
 ?>
 </body>
 </html>

@@ -54,5 +54,5 @@ function myErrorHandler($errno, $errstr, $errfile, $errline)
 	file_put_contents("./".date('Y-m-d').'_errlog.txt',date('Y-m-d H:i:s')." $errfile $errline   $user_defined_errType $errstr "."\r\n",FILE_APPEND);
 	return true;
 }
-set_error_handler(myErrorHandler);
+set_error_handler(myErrorHandler);//注册错误提示
 ?>

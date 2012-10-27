@@ -1,17 +1,17 @@
 <?PHP
 function myErrorHandler($errno, $errstr, $errfile, $errline)
 {
-    $errfile=str_replace(getcwd(),"",$errfile);
-    $errstr=str_replace(getcwd(),"",$errstr);
-    switch ($errno) {
-        case 1:
-            $user_defined_errType = '致命的运行时错误(E_ERROR)';
-            break;
-        case 2:
-            $user_defined_errType = '非致命的运行时错误(E_WARNING)';
-             break;
-        case 4:
-            $user_defined_errType = '编译时语法解析错误(E_PARSE)';
+	$errfile=str_replace(getcwd(),"",$errfile);
+	$errstr=str_replace(getcwd(),"",$errstr);
+	switch ($errno) {
+		case 1:
+			$user_defined_errType = '致命的运行时错误(E_ERROR)';
+			break;
+		case 2:
+			$user_defined_errType = '非致命的运行时错误(E_WARNING)';
+			break;
+		case 4:
+			$user_defined_errType = '编译时语法解析错误(E_PARSE)';
 			break;
 		case 8:
 			$user_defined_errType = '运行时提示(E_NOTICE)';
@@ -48,11 +48,11 @@ function myErrorHandler($errno, $errstr, $errfile, $errline)
 			break;
 		default:
 			$user_defined_errType = '未知类型';
-            break;
-    }
+			break;
+	}
 	echo "<div class=\"warning\">$user_defined_errType 在 $errfile 的第$errline 行，内容：$errstr</div>";
 	file_put_contents("./".date('Y-m-d').'_errlog.txt',date('Y-m-d H:i:s')." $errfile $errline   $user_defined_errType $errstr "."\r\n",FILE_APPEND);
-    return true;
+	return true;
 }
 set_error_handler(myErrorHandler);
 ?>
